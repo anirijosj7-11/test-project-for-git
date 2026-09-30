@@ -1,23 +1,25 @@
-// script.js - Handles UI interaction and authentication verification
+// script.js - Handles login authentication
 document.getElementById("loginForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent default page refresh
+    event.preventDefault();
 
     const usernameInput = document.getElementById("username").value.trim();
     const passwordInput = document.getElementById("password").value.trim();
     const messageElement = document.getElementById("message");
 
-    // Clear previous status style
     messageElement.className = "message";
 
-    // Validate credentials using AUTH_CONFIG from auth.js
     if (usernameInput === AUTH_CONFIG.validUsername && passwordInput === AUTH_CONFIG.validPassword) {
         messageElement.textContent = "Login Successful! Redirecting...";
         messageElement.classList.add("success");
-        
-        // Example action after successful login
+
+        // Save session state so landing page knows user is logged in
+        sessionStorage.setItem("isLoggedIn", "true");
+        sessionStorage.setItem("username", usernameInput);
+
+        // Redirect to landing page after 1 second
         setTimeout(() => {
-            alert("Welcome, " + usernameInput + "!");
-        }, 500);
+            window.location.href = "landing.html";
+        }, 1000);
     } else {
         messageElement.textContent = "Invalid Username or Password!";
         messageElement.classList.add("error");
