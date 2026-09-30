@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Welcome</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="landing-body">
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="logo">MyDashboard</div>
+        <div class="user-info">
+            <span id="welcomeUser">Welcome, User</span>
+            <button id="logoutBtn" class="logout-btn">Logout</button>
+        </div>
+    </header>
+
+    <!-- Main Landing Page Content -->
+    <main class="dashboard-container">
+        <section class="hero-card">
+            <h1>Welcome to Your Dashboard</h1>
+            <p>You have successfully authenticated using credentials <strong>AR7113</strong>.</p>
+        </section>
+
+        <section class="cards-grid">
+            <div class="card">
+                <h3>Profile Overview</h3>
+                <p>Status: <span class="badge active">Active</span></p>
+                <p>Role: Administrator</p>
+            </div>
+            <div class="card">
+                <h3>System Analytics</h3>
+                <p>Total Sessions: 12</p>
+                <p>Last Login: Just now</p>
+            </div>
+            <div class="card">
+                <h3>Quick Actions</h3>
+                <button class="action-btn">View Reports</button>
+                <button class="action-btn secondary">Settings</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="landing.js"></script>
+</body>
+</html>
